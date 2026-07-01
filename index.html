@@ -8,12 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-<!--    <div id="particles-js"> -->
         <main>
         <div class="container">
         <header class="navbar">
             <div class="bar">
-                <span class="text">BIENVENUE SUR MON PORTFOLIO</span>
+                <span class="text">DEVELOPPEUR WEB JUNIOR</span>
             </div>
         </header>
             <div class="row">
@@ -25,7 +24,6 @@
                         </div>
                     </div>  
                     <div class="identiete">
-                        <h1>Developpeur Web</h1>
                         <h1>Ihonty RAKOTOJAONA</h1>
                         <h2>Lot 150B Ankadidambo Ambohimangakely</h2> <br> <br>
                         <p>Jeune diplome actuellement la recherhce d'un emploi</p>
@@ -59,6 +57,7 @@
                     </section>
                 </div>
                 <section class="comptence">
+                    <canvas id="matrix-canvas"></canvas>
                     <h1>Competence techniques</h1>
                     <div class="row">
                         <div class="col-3">
@@ -117,47 +116,45 @@
                 <section class="contact">
                     <h1>Contact</h1>
                     <div class="container">
-                        <form>
-                        
-                            <div class="row mb-3">
-                                <div class="col-6">
-                                    <label for="nom" class="form-label">Nom</label>
-                                    <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                            <form id="form-contact">
+                            
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label for="nom" class="form-label">Nom</label>
+                                        <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="prenom" class="form-label">Prénom</label>
+                                        <input type="text" class="form-control" id="prenom" placeholder="Votre prénom">
+                                    </div>
                                 </div>
-                                <div class="col-6">
-                                    <label for="prenom" class="form-label">Prénom</label>
-                                    <input type="text" class="form-control" id="prenom" placeholder="Votre prénom">
+                            
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Votre email">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="contact" class="form-label">Téléphone</label>
+                                        <input type="number" class="form-control" id="contact" placeholder="Votre numéro">
+                                    </div>
                                 </div>
-                            </div>
-                        
-                            <div class="row mb-3">
-                                <div class="col-6">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Votre email">
+                            
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="4" placeholder="Votre message..."></textarea>
                                 </div>
-                                <div class="col-6">
-                                    <label for="contact" class="form-label">Téléphone</label>
-                                    <input type="number" class="form-control" id="contact" placeholder="Votre numéro">
-                                </div>
-                            </div>
-                        
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="4" placeholder="Votre message..."></textarea>
-                            </div>
-                        
-                            <button type="submit" class="btn btn-primary">Envoyer</button>
-                        
-                        </form>
+                                <div id="msg-confirmation"></div>
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                            
+                            </form>
                     </div>
                 </section>
             </div>
         </div>
         <footer>copyrigth@ihonty 2026</footer>
         </main>
-<!--    </div> -->
-    <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

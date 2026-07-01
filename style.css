@@ -1,171 +1,178 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
 
 :root {
-  --bg-deep:    #020817;
-  --bg-card:    #0d1b2a;
-  --neon-blue:  #00d4ff;
-  --neon-cyan:  #00ffe7;
-  --text-main:  #e0f2fe;
-  --text-muted: #6b8fa8;
-  --border:     #1e3a5f;
+  --bg:        #000000;
+  --bg-card:   #020f02;
+  --border:    #0a2a0a;
+  --green:     #00ff41;
+  --green-dim: #00aa2a;
+  --red:       #ff003c;
+  --red-dark:  #1a0008;
+  --white:     #ccffcc;
+  --gray:      #3a6b3a;
 }
 
-* { box-sizing: border-box; }
+/* ===== BASE ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background-color: var(--bg-deep);
-  color: var(--text-main);
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.05rem;
+  background-color: var(--bg);
+  color: var(--white);
+  /* Share Tech Mono : police monospace style terminal, parfaite pour Matrix */
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
+/* ===== SCROLLBAR STYLÉE ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 3px; }
+
+/* ===== BARRE DÉFILANTE ===== */
+header.navbar {
+  background: var(--bg);
+  border-bottom: 1px solid var(--green-dim);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
 .bar {
-    width: 100%;
-    height: 60px;
-    padding: 15px;
-    background: var(--bg-card);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .text {
-    position: absolute;
-    white-space: nowrap;
-    color: var(--text-muted);
-    font-size: 24px;
-    font-weight: bold;
-    animation: slide 8s linear infinite;
+  position: absolute;
+  white-space: nowrap;
+  color: var(--green-dim);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  animation: slide 12s linear infinite;
 }
 
 @keyframes slide {
-    from {
-        transform: translateX(100vw);
-    }
-    to {
-        transform: translateX(-100%);
-    }
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(-100%); }
 }
 
-.nom-hero {
-  font-family: 'Orbitron', monospace;
-  font-weight: 900;
-  font-size: clamp(1.4rem, 4vw, 2.2rem);
-  color: var(--text-main);
-  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-  letter-spacing: 3px;
-  line-height: 1.3;
-}
-
-.poste-hero {
-  font-family: 'Orbitron', monospace;
-  font-size: clamp(0.75rem, 2vw, 0.9rem);
-  color: var(--neon-blue);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
+/* ===== PHOTO ===== */
 .logo img {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
-  border: 3px solid var(--neon-blue);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.1);
+  /* Filtre vert Matrix sur la photo */
+  filter: sepia(1) hue-rotate(85deg) saturate(2) brightness(0.8);
+  border: 2px solid var(--green);
+  box-shadow:
+    0 0 15px rgba(0,255,65,0.4),
+    0 0 40px rgba(0,255,65,0.1);
   display: block;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
+/* ===== SECTION CIVILITÉ ===== */
 section.civilte {
   padding: 2rem 1.5rem;
   background: var(--bg-card);
   border-right: 1px solid var(--border);
-  min-height: 73vh;
+  min-height: 100vh;
+}
+
+/* ===== H1 ===== */
+h1 {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(0,255,65,0.5);
 }
 
 .identiete h1:first-child {
-  font-family: 'Orbitron', monospace;
-  font-size: 0.75rem;
-  color: var(--neon-blue);
-  letter-spacing: 3px;
+  font-size: 0.7rem;
+  color: var(--red);
+  letter-spacing: 4px;
   text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255,0,60,0.5);
   margin-bottom: 0.3rem;
 }
 
 .identiete h1:last-of-type {
-  font-family: 'Orbitron', monospace;
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: 2px;
-  text-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
-  margin-bottom: 0.8rem;
-}
-
-.identiete h2 {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-
-.identiete p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  border-left: 2px solid var(--neon-blue);
-  padding-left: 0.8rem;
-}
-
-section.parcourt,
-section.comptence {
-  padding: 2rem 2rem;
-}
-
-section.parcourt {
-  border-bottom: 1px solid var(--border);
+  font-size: 1.1rem;
 }
 
 h1.indc, h1.Exp {
-  font-family: 'Orbitron', monospace;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--neon-blue);
-  letter-spacing: 3px;
+  font-size: 0.85rem;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
+  margin-bottom: 1.2rem;
 }
 
-section.comptence h1 {
-  font-family: 'Orbitron', monospace;
-  font-size: 1rem;
-  color: var(--neon-blue);
-  letter-spacing: 3px;
+section.comptence h1,
+section.contact h1 {
+  font-size: 0.85rem;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
 }
 
+/* ===== H2 ===== */
 h2 {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--neon-cyan);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--green-dim);
   letter-spacing: 1px;
   margin-top: 1rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.4rem;
 }
 
+.identiete h2 {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+/* ===== PARAGRAPHES — BOXES ROUGE NÉON =====
+   Cachés par défaut, révélés par le JS au survol
+   avec effet machine à écrire */
 p {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: #ff6b8a;
+  margin-bottom: 0.8rem;
+  opacity: 0;
+  min-height: 1.4em;
+  cursor: default;
+  transition: opacity 0.3s;
+
+  /* Box rouge cyberpunk */
+  background-color: var(--red-dark);
+  border: 1px solid var(--red);
+  border-left: 3px solid var(--red);
+  border-radius: 0;
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 0 8px rgba(255,0,60,0.2);
 }
 
+p.revealed {
+  opacity: 1;
+  box-shadow:
+    0 0 10px rgba(255,0,60,0.4),
+    inset 0 0 15px rgba(255,0,60,0.05);
+}
+
+/* ===== LISTES ===== */
 ul {
   list-style: none;
   padding-left: 0;
@@ -174,21 +181,106 @@ ul {
 
 ul li {
   font-size: 0.85rem;
-  color: var(--text-muted);
-  padding: 0.2rem 0;
-  padding-left: 1rem;
+  color: var(--green-dim);
+  padding: 0.2rem 0 0.2rem 1.2rem;
   position: relative;
 }
 
 ul li::before {
-  content: "▸";
+  content: ">";
   position: absolute;
   left: 0;
-  color: var(--neon-blue);
-  font-size: 0.7rem;
-  top: 0.3rem;
+  color: var(--green);
+  font-weight: bold;
 }
 
+/* ===== SECTIONS ===== */
+section.parcourt {
+  padding: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+section.contact {
+  padding: 2rem;
+}
+
+/* ===== SECTION COMPÉTENCES — CANVAS MATRIX ===== */
+section.comptence {
+  padding: 2rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+#matrix-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+section.comptence > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== FORMULAIRE ===== */
+.form-control {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--green) !important;
+  font-family: 'Share Tech Mono', monospace !important;
+}
+
+.form-control::placeholder { color: var(--gray) !important; }
+
+.form-control:focus {
+  border-color: var(--green) !important;
+  box-shadow: 0 0 8px rgba(0,255,65,0.2) !important;
+}
+
+.form-label {
+  color: var(--green-dim);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-color: transparent;
+  border: 1px solid var(--red);
+  color: var(--red);
+  font-family: 'Orbitron', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 0.6rem 1.5rem;
+  transition: all 0.3s;
+  text-shadow: 0 0 8px rgba(255,0,60,0.5);
+}
+
+.btn-primary:hover {
+  background-color: var(--red);
+  color: var(--bg);
+  text-shadow: none;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  background-color: var(--bg);
+  color: var(--gray);
+  width: 100%;
+  padding: 15px;
+  border-top: 1px solid var(--border);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   section.civilte {
     min-height: auto;
@@ -197,32 +289,11 @@ ul li::before {
     padding: 1.5rem;
   }
 
-  .logo img {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 1rem;
-  }
+  .logo img { width: 120px; height: 120px; }
 
   section.parcourt,
-  section.comptence {
+  section.comptence,
+  section.contact {
     padding: 1.5rem 1rem;
   }
-}
-
-footer {
-    text-align: center;
-    background-color: var(--bg-card);
-    color: var(--text-muted);
-    width: 100%;
-    padding: 15px;
-    border-top: 1px solid var(--border);
-}
-
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
 }
