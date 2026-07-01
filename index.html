@@ -8,25 +8,19 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="navbar">
-        <nav>
-            <ul>
-                <li><a>A propos§</a></li>
-                <li><a>Educations</a></li>
-                <li><a>Competences</a></li>
-                <li><a>Experiences</a></li>
-                <li><a>Contact</a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
     <div class="container">
+    <header class="navbar">
+        <div class="bar">
+            <span class="text">BIENVENUE SUR MON PORTFOLIO</span>
+        </div>
+    </header>
         <div class="row">
         <div class="col-3">
             <section class="civilte">
                 <div class="photo">
                     <div class="logo">
-                        <img src="IMG_20260128_064312.jpg" alt="Ma photo" class="img-fluid rounded-circle w-25">
+                        <img src="IMG_20260128_064312.jpg" alt="Ma photo" class="img-fluid rounded-circle">
                     </div>
                 </div>
                 <div class="identiete">
@@ -119,8 +113,46 @@
                 </div>
                 
             </section>
+            <section class="contact">
+                <h1>Contact</h1>
+                <div class="container">
+                    <form>
+                    
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label for="nom" class="form-label">Nom</label>
+                                <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                            </div>
+                            <div class="col-6">
+                                <label for="prenom" class="form-label">Prénom</label>
+                                <input type="text" class="form-control" id="prenom" placeholder="Votre prénom">
+                            </div>
+                        </div>
+                    
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Votre email">
+                            </div>
+                            <div class="col-6">
+                                <label for="contact" class="form-label">Téléphone</label>
+                                <input type="number" class="form-control" id="contact" placeholder="Votre numéro">
+                            </div>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Votre message..."></textarea>
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    
+                    </form>
+                </div>
+            </section>
         </div>
     </div>
+    <footer>copyrigth@ihonty 2026</footer>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 </body>
