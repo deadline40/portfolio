@@ -170,6 +170,8 @@ p.revealed {
   box-shadow:
     0 0 10px rgba(255,0,60,0.4),
     inset 0 0 15px rgba(255,0,60,0.05);
+    border-radius: 15%;
+    font-size: large;
 }
 
 /* ===== LISTES ===== */
