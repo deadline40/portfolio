@@ -1,0 +1,75 @@
+.card-project {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card-project:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid #00ff41;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+.card-project:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay h2 {
+    color: #00ff41;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.project-overlay p {
+    color: #005500;
+    font-size: 0.75rem;
+    opacity: 1 !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Bouton voir */
+.btn-voir {
+    color: #ff003c;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border: 1px solid #ff003c;
+    padding: 0.3rem 0.8rem;
+    transition: all 0.2s;
+}
+
+.btn-voir:hover {
+    background: #ff003c;
+    color: #000;
+}

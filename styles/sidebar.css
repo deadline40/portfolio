@@ -1,0 +1,117 @@
+#sidebar {
+    width: 220px;
+    min-height: 100vh;
+    height: 100vh;
+    background: #000000;
+    border-right: 1px solid #003300;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    /* Légère lueur verte sur le bord droit */
+    box-shadow: 2px 0 15px rgba(0,255,65,0.05);
+}
+
+.sidebar-header {
+    padding: 0 1.5rem 2rem;
+    border-bottom: 1px solid #003300;
+    margin-bottom: 1.5rem;
+}
+
+.terminal-prompt {
+    color: #00ff41;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.sidebar-menu li {
+    padding: 0;
+    border-bottom: 1px solid #001a00;
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: #005500;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.sidebar-menu li a:hover {
+    color: #00ff41;
+    background: #001a00;
+    padding-left: 2rem; 
+}
+
+.sidebar-menu li.active a {
+    color: #00ff41;
+    background: #001a00;
+    border-left: 2px solid #ff003c; 
+}
+
+.cmd-prefix {
+    color: #ff003c; 
+    margin-right: 2px;
+}
+
+.sidebar-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #003300;
+    text-align: center;
+    color: #00ff41;
+}
+
+#main-content {
+    margin-left: 220px;
+    min-height: 100vh;
+    width: calc(100% - 220px);
+    padding: 3rem;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        min-height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 1px solid #003300;
+    }
+
+    .sidebar-menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-menu li {
+        border-bottom: none;
+    }
+
+    .sidebar-header,
+    .sidebar-footer {
+        display: none;
+    }
+
+    #main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}

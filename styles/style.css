@@ -12,24 +12,20 @@
   --gray:      #3a6b3a;
 }
 
-/* ===== BASE ===== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   background-color: var(--bg);
   color: var(--white);
-  /* Share Tech Mono : police monospace style terminal, parfaite pour Matrix */
   font-family: 'Share Tech Mono', monospace;
   font-size: 1rem;
   line-height: 1.7;
 }
 
-/* ===== SCROLLBAR STYLÉE ===== */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 3px; }
 
-/* ===== BARRE DÉFILANTE ===== */
 header.navbar {
   background: var(--bg);
   border-bottom: 1px solid var(--green-dim);
@@ -64,12 +60,10 @@ header.navbar {
   to   { transform: translateX(-100%); }
 }
 
-/* ===== PHOTO ===== */
 .logo img {
   width: 180px;
   height: 180px;
   object-fit: cover;
-  /* Filtre vert Matrix sur la photo */
   filter: sepia(1) hue-rotate(85deg) saturate(2) brightness(0.8);
   border: 2px solid var(--green);
   box-shadow:
@@ -79,7 +73,6 @@ header.navbar {
   margin-bottom: 1.5rem;
 }
 
-/* ===== SECTION CIVILITÉ ===== */
 section.civilte {
   padding: 2rem 1.5rem;
   background: var(--bg-card);
@@ -87,7 +80,6 @@ section.civilte {
   min-height: 100vh;
 }
 
-/* ===== H1 ===== */
 h1 {
   font-family: 'Orbitron', monospace;
   font-weight: 700;
@@ -129,7 +121,6 @@ section.contact h1 {
   margin-bottom: 1.5rem;
 }
 
-/* ===== H2 ===== */
 h2 {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.9rem;
@@ -144,19 +135,11 @@ h2 {
   color: var(--gray);
 }
 
-/* ===== PARAGRAPHES — BOXES ROUGE NÉON =====
-   Cachés par défaut, révélés par le JS au survol
-   avec effet machine à écrire */
 p {
   font-size: 0.85rem;
   color: #ff6b8a;
   margin-bottom: 0.8rem;
-  opacity: 0;
-  min-height: 1.4em;
-  cursor: default;
-  transition: opacity 0.3s;
 
-  /* Box rouge cyberpunk */
   background-color: var(--red-dark);
   border: 1px solid var(--red);
   border-left: 3px solid var(--red);
@@ -164,17 +147,6 @@ p {
   padding: 0.6rem 0.8rem;
   box-shadow: 0 0 8px rgba(255,0,60,0.2);
 }
-
-p.revealed {
-  opacity: 1;
-  box-shadow:
-    0 0 10px rgba(255,0,60,0.4),
-    inset 0 0 15px rgba(255,0,60,0.05);
-    border-radius: 15%;
-    font-size: large;
-}
-
-/* ===== LISTES ===== */
 ul {
   list-style: none;
   padding-left: 0;
@@ -196,7 +168,6 @@ ul li::before {
   font-weight: bold;
 }
 
-/* ===== SECTIONS ===== */
 section.parcourt {
   padding: 2rem;
   border-bottom: 1px solid var(--border);
@@ -206,7 +177,6 @@ section.contact {
   padding: 2rem;
 }
 
-/* ===== SECTION COMPÉTENCES — CANVAS MATRIX ===== */
 section.comptence {
   padding: 2rem;
   border-bottom: 1px solid var(--border);
@@ -230,7 +200,6 @@ section.comptence > * {
   z-index: 1;
 }
 
-/* ===== FORMULAIRE ===== */
 .form-control {
   background-color: var(--bg-card) !important;
   border: 1px solid var(--border) !important;
@@ -269,7 +238,6 @@ section.comptence > * {
   text-shadow: none;
 }
 
-/* ===== FOOTER ===== */
 footer {
   text-align: center;
   background-color: var(--bg);
@@ -282,7 +250,6 @@ footer {
   letter-spacing: 2px;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   section.civilte {
     min-height: auto;
@@ -298,4 +265,75 @@ footer {
   section.contact {
     padding: 1.5rem 1rem;
   }
+}
+
+#matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.terminal-window {
+    max-width: 700px;
+    margin: 5vh auto 0;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid #003300;
+    box-shadow:
+        0 0 30px rgba(0,255,65,0.1),
+        inset 0 0 30px rgba(0,0,0,0.5);
+}
+
+.terminal-line {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    min-height: 1.4rem;
+    margin-bottom: 0.2rem;
+}
+
+.terminal-name {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 900;
+    color: #00ff41;
+    letter-spacing: 4px;
+    text-shadow:
+        0 0 20px rgba(0,255,65,0.8),
+        0 0 60px rgba(0,255,65,0.3);
+    margin-top: 1.5rem;
+    min-height: 3rem;
+}
+
+.terminal-subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    color: #ff003c;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255,0,60,0.5);
+    margin-top: 0.5rem;
+    min-height: 1.5rem;
+}
+
+.terminal-input-line {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    color: #00ff41;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.blink {
+    color: #00ff41;
+    animation: blink-cursor 1s step-end infinite;
+}
+
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
 }

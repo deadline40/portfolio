@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Contact</title>
+</head>
+<body>
+<header class="navbar">
+    <div class="bar">
+        <span class="text">CONTACT // IHONTY RAKOTOJAONA</span>
+        <a href="index.html" class="btn-retour-bar">&lt; cd ../home</a>
+    </div>
+</header>
+<section class="contact">
+        <h1>Contact</h1>
+        <div class="container">
+                <form id="form-contact">
+                
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label for="nom" class="form-label">Nom</label>
+                            <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                        </div>
+                        <div class="col-6">
+                            <label for="prenom" class="form-label">Prénom</label>
+                            <input type="text" class="form-control" id="prenom" placeholder="Votre prénom">
+                        </div>
+                    </div>
+                
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Votre email">
+                        </div>
+                        <div class="col-6">
+                            <label for="contact" class="form-label">Téléphone</label>
+                            <input type="number" class="form-control" id="contact" placeholder="Votre numéro">
+                        </div>
+                    </div>
+                
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Votre message..."></textarea>
+                    </div>
+                    <div id="msg-confirmation"></div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                
+                </form>
+        </div>
+    </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
