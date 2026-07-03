@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>SYSTEM FAILURE</title>
+
+<style>
+
+body{
+
+margin:0;
+background:#000;
+color:#ff003c;
+font-family:Consolas, monospace;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+
+}
+
+.box{
+
+width:720px;
+padding:40px;
+border:1px solid #ff003c;
+background:#050000;
+box-shadow:0 0 35px #ff003c;
+
+}
+
+h1{
+
+font-size:34px;
+margin-bottom:25px;
+
+}
+
+.log{
+
+margin-top:20px;
+line-height:28px;
+color:#bbbbbb;
+
+}
+
+.error{
+
+color:#ff003c;
+
+}
+
+.btn{
+
+display:inline-block;
+margin-top:35px;
+padding:12px 30px;
+border:1px solid #ff003c;
+color:#ff003c;
+text-decoration:none;
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#ff003c;
+color:#000;
+
+}
+
+.cursor{
+
+animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>CRITICAL SYSTEM FAILURE</h1>
+
+<div class="log">
+
+> Initializing server...<br>
+
+> Loading modules...<br>
+
+<span class="error">> ERROR 0x0007A</span><br>
+
+<span class="error">> Database connection lost.</span><br>
+
+<span class="error">> Core services unavailable.</span><br>
+
+<span class="error">> Emergency shutdown initiated.</span><br>
+
+<br>
+
+Le serveur est actuellement indisponible.<br>
+
+Veuillez réessayer ultérieurement.
+
+</div>
+
+<a href="projects.html" class="btn">← RETURN</a>
+
+<p style="margin-top:30px;">system@umbrella:~$ <span class="cursor">█</span></p>
+
+</div>
+
+</body>
+</html>
