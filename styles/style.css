@@ -2,24 +2,20 @@
 
 :root {
   --bg:        #000000;
-  --bg-card:   #020f02;
-  --border:    #0a2a0a;
+  --bg-card:   #000000;
+  --border:    #003300;
   --green:     #00ff41;
   --green-dim: #00aa2a;
   --red:       #ff003c;
-  --red-dark:  #1a0008;
-  --white:     #ccffcc;
-  --gray:      #3a6b3a;
+  --red-dark:  #0a0000;
+  --white:     #00ff41;
+  --gray:      #005500;
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background-color: var(--bg);
-  color: var(--white);
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 1rem;
-  line-height: 1.7;
+    background-color: var(--bg);
+    color: var(--white);
 }
 
 ::-webkit-scrollbar { width: 6px; }
@@ -336,4 +332,233 @@ footer {
 @keyframes blink-cursor {
     0%, 100% { opacity: 1; }
     50%       { opacity: 0; }
+}
+
+.stat-card {
+    border: 1px solid #003300;
+    padding: 2rem 1rem;
+    background: #000;
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    border-color: #00ff41;
+    box-shadow: 0 0 20px rgba(0,255,65,0.15);
+}
+
+.stat-card {
+    border: 1px solid #003300;
+    padding: 2rem 1rem;
+    background: #000000;
+    transition: all 0.3s;
+}
+
+.stat-card p {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #005500 !important;
+    padding: 0 !important;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn-download {
+    background: #000000;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+}
+
+.btn-download:hover {
+    background: #00ff41;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0,255,65,0.3);
+}
+
+.btn-download span {
+    color: #ff003c;
+    margin-right: 0.5rem;
+}
+
+section.presentation {
+    border: 1px solid #003300;
+    padding: 2rem;
+    background: #000;
+}
+
+section.presentation {
+    border: 1px solid #003300;
+    padding: 2rem;
+    background: #000000;
+}
+
+section.presentation h3 {
+    color: #ff003c !important;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255,0,60,0.4);
+}
+
+section.download h2 {
+    color: #00ff41;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+/* ===== BOUTON THEME ===== */
+#theme-toggle {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: #000;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.3s;
+}
+
+#theme-toggle:hover {
+    background: #00ff41;
+    color: #000;
+}
+
+/* ===== LIGHT MODE =====
+   On ajoute la classe "light" sur <body>
+   et on surcharge toutes les couleurs */
+body.light {
+    background-color: #ffffff !important;
+    color: #cc0000 !important;
+}
+
+body.light h1,
+body.light h2,
+body.light h3 {
+    color: #cc0000 !important;
+    text-shadow: none;
+}
+
+body.light p {
+    background: #fff5f5 !important;
+    border-color: #cc0000 !important;
+    color: #cc0000 !important;
+    box-shadow: none !important;
+}
+
+body.light ul li {
+    color: #cc0000;
+}
+
+body.light ul li::before {
+    color: #ff0000;
+}
+
+body.light header.navbar,
+body.light section.civilte,
+body.light section.parcourt,
+body.light section.comptence,
+body.light section.contact,
+body.light section.presentation,
+body.light .stat-card,
+body.light .card-project,
+body.light .terminal-window {
+    background: #ffffff !important;
+    border-color: #ffcccc !important;
+}
+
+body.light .bar {
+    background: #fff0f0;
+    border-color: #ffcccc;
+}
+
+body.light .text,
+body.light .terminal-prompt {
+    color: #cc0000;
+}
+
+body.light .btn-retour-bar {
+    color: #cc0000;
+}
+
+body.light footer {
+    background: #fff0f0;
+    color: #cc0000;
+    border-color: #ffcccc;
+}
+
+body.light #theme-toggle {
+    background: #fff;
+    border-color: #cc0000;
+    color: #cc0000;
+}
+
+body.light #theme-toggle:hover {
+    background: #cc0000;
+    color: #fff;
+}
+
+body.light .form-control {
+    background: #fff !important;
+    border-color: #ffcccc !important;
+    color: #cc0000 !important;
+}
+
+body.light .btn-primary {
+    border-color: #cc0000;
+    color: #cc0000;
+}
+
+body.light .btn-primary:hover {
+    background: #cc0000;
+    color: #fff;
+}
+
+body.light .btn-download {
+    background: #fff;
+    border-color: #cc0000;
+    color: #cc0000;
+}
+
+body.light .stat-card h1 {
+    color: #cc0000 !important;
+    text-shadow: none;
+}
+
+
+
+body.light .container,
+body.light main,
+body.light div {
+    background-color: #ffffff;
+    color: #cc0000;
+}
+
+body.light .stat-card,
+body.light section.presentation,
+body.light section.comptence,
+body.light section.parcourt,
+body.light section.contact {
+    background: #ffffff !important;
+    border-color: #ffcccc !important;
+}
+
+body.light .btn-download {
+    display: inline-block;
+    background: #ffffff !important;
+    border-color: #cc0000 !important;
+    color: #cc0000 !important;
 }
